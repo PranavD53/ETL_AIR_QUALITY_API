@@ -57,3 +57,4 @@ def load_data():
 
 
     print(f"✅ Total rows inserted: {total_inserted}")
+    
