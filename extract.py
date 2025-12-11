@@ -173,28 +173,3 @@ def fetch_all_cities(cities: Optional[List[str]] = None) -> List[Dict[str, Optio
         time.sleep(SLEEP_BETWEEN_CALLS)
 
     return results
- 
- 
-if __name__ == "__main__":
-
-    print("Starting extraction for OpenAQ (no auth required)")
-
-    cities_env = [c.strip() for c in DEFAULT_CITIES if c.strip()]
-
-    print(f"Cities: {cities_env}")
-
-    out = fetch_all_cities(cities_env)
-
-    print("Extraction complete. Summary:")
-
-    for r in out:
-
-        if r.get("success") == "true":
-
-            print(f" - {r['city']}: saved -> {r['raw_path']}")
-
-        else:
-
-            print(f" - {r['city']}: ERROR -> {r.get('error')}")
-
- 
